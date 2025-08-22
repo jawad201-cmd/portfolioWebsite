@@ -1,0 +1,175 @@
+/* viewport */
+.contact-viewport {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* header w/ same gradient language as hero */
+.contact-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background:
+    radial-gradient(60% 150% at 50% -10%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 60%),
+    linear-gradient(180deg, color-mix(in oklab, var(--bg) 90%, #ffffff 10%), transparent 40%);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.contact-title {
+  margin: 0;
+  font-size: clamp(18px, 4vw, 24px)
+}
+
+.contact-actions .btn {
+  text-decoration: none
+}
+
+/* content split */
+.contact-split {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  margin: auto;
+}
+
+/* cards */
+.contact-card {
+  background: var(--card);
+  color: var(--ink);
+  border-radius: 16px;
+  box-shadow: var(--ring);
+  padding: 22px;
+  margin: 10px 0;
+}
+
+#direct-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.muted {
+  color: var(--muted)
+}
+
+/* form */
+.contact-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px
+}
+
+.row {
+  display: grid;
+  gap: 6px
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  color: var(--ink);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical
+}
+
+/* link list */
+.link-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px
+}
+
+.link-list a {
+  color: var(--ink);
+  text-decoration: underline
+}
+
+.link-list a:hover {
+  text-decoration: none
+}
+
+/* icon links (logos) */
+.contact-viewport {
+  --accent-yellow: rgba(255, 200, 100, 1)
+}
+
+.icon-grid {
+  display: flex;
+  gap: 14px;
+  padding: 0 50px;
+  align-items: center
+}
+
+.icon-btn {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .12);
+  color: var(--accent-yellow);
+  text-decoration: none;
+  transition: transform .2s ease, filter .2s ease, border-color .2s ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-3px) scale(1.06);
+  filter: drop-shadow(0 0 12px rgba(255, 200, 100, .45));
+  border-color: rgba(255, 200, 100, .55);
+}
+
+.icon-btn svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor
+}
+
+.mask-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+  background: var(--accent-yellow);
+  -webkit-mask: var(--icon) no-repeat center / 100% 100%;
+  mask: var(--icon) no-repeat center / 100% 100%;
+}
+
+.icon-grid--small {
+  grid-template-columns: repeat(2, 56px)
+}
+
+/* responsive */
+@media (max-width:900px) {
+  .contact-split {
+    flex-direction: column
+  }
+
+  /* FIX: was using grid props on flex */
+}
+
+/* === Responsive ============================================================ */
+@media (max-width: 900px){
+  .contact-split{ flex-direction: column; } /* already present, keep it */
+}
+@media (max-width: 600px){
+  .contact-header{ padding: 10px 12px; }
+  .contact-card{ padding: 16px; }
+  .contact-split{ padding: 12px; gap: 12px; }
+  .icon-btn{ width: 48px; height: 48px; }
+  .icon-btn svg,
+  .mask-icon{ width: 22px; height: 22px; }
+}

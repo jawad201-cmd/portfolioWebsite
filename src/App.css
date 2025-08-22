@@ -1,0 +1,50 @@
+/* === Generic section spacing ============================================== */
+section {
+  padding: 35px 20px
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px
+}
+
+/* === Hero (keep gradients; remove unused animation/sheen) ================== */
+.hero {
+  padding: 60px;
+  text-align: center;
+  background:
+    radial-gradient(60% 60% at 50% -10%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 60%),
+    linear-gradient(180deg, color-mix(in oklab, var(--bg) 90%, #ffffff 10%), transparent 40%);
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.15;
+  background: linear-gradient(90deg, var(--ink) 0%, var(--brand) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  margin: 0 0 16px;
+  color: var(--muted)
+}
+
+/* === Footer ================================================================ */
+.footer {
+  text-align: center;
+  padding: 24px 12px;
+  color: var(--muted);
+  margin-top: 30px;
+}
+
+/* === Responsive ============================================================ */
+@media (max-width: 900px){
+  section{ padding: 28px 16px; }
+}
+@media (max-width: 600px){
+  section{ padding: 22px 12px; }
+  .footer{ padding: 18px 10px; }
+}

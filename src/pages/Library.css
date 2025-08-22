@@ -1,0 +1,407 @@
+/* === Layout ================================================================= */
+.library-viewport {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+.library-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background:
+        radial-gradient(60% 150% at 50% -10%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 60%),
+        linear-gradient(180deg, color-mix(in oklab, var(--bg) 90%, #ffffff 10%), transparent 40%);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.library-title {
+    margin: 0;
+    font-size: clamp(18px, 4vw, 22px)
+}
+
+.library-title.clickable {
+    cursor: pointer
+}
+
+.library-title.clickable:hover {
+    text-decoration: underline
+}
+
+/* optional strip element in DOM; keep neutral to avoid layout shift */
+.library-gradient {
+    height: 0
+}
+
+/* main split */
+.library-split {
+    flex: 1 1 auto;
+    display: grid;
+    gap: 16px;
+    padding: 16px;
+    grid-template-columns: 320px 1fr;
+    height: calc(100vh - 58px);
+}
+
+/* === Sidebar (accordion) ==================================================== */
+.library-left {
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: var(--ring);
+    overflow: auto;
+    padding: 10px;
+}
+
+.acc {
+    border-bottom: 1px solid rgba(255, 255, 255, .06)
+}
+
+.acc:last-child {
+    border-bottom: none
+}
+
+.acc-head {
+    width: 100%;
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.acc-head:hover {
+    background: rgba(255, 255, 255, .06)
+}
+
+.chev {
+    transition: transform .2s ease
+}
+
+.chev.open {
+    transform: rotate(180deg)
+}
+
+.acc-list {
+    list-style: none;
+    margin: 6px 0 10px;
+    padding: 0 6px 6px
+}
+
+.acc-item {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin: 6px 0;
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease;
+}
+
+.acc-item:hover {
+    background: rgba(255, 255, 255, .05)
+}
+
+.acc-item.active {
+    border-color: var(--brand-2)
+}
+
+/* === Right pane ============================================================= */
+.library-right {
+    overflow: auto
+}
+
+/* constrain cards on the right pane (except the project detail card) */
+.library-right .detail-card:not(.project-detail),
+.library-right .grid-card {
+    max-width: 980px;
+    /* adjust if you want narrower/wider */
+}
+
+/* shared card look */
+.detail-card,
+.grid-card {
+    background: var(--card);
+    color: var(--ink);
+    border-radius: 16px;
+    box-shadow: var(--ring);
+    padding: 22px;
+}
+
+/* ALL view: category cards are fully clickable */
+.clickable-card {
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease
+}
+
+.clickable-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .25)
+}
+
+.title-list {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 8px
+}
+
+.project-title-link {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255, 255, 255, .15);
+    padding-bottom: 2px;
+}
+
+.project-title-link:hover {
+    border-bottom-color: var(--brand-2)
+}
+
+/* Category view grid */
+.grid-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.cat-title {
+    margin: 0 0 8px
+}
+
+.grid-title {
+    margin: 0 0 6px
+}
+
+.grid-tech {
+    margin: 6px 0 0
+}
+
+/* multi-category stack on ALL view */
+.stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px
+}
+
+/* responsive */
+@media (max-width:900px) {
+    .library-split {
+        grid-template-columns: 1fr;
+        height: auto
+    }
+
+    .library-left {
+        max-height: 260px
+    }
+
+    .grid-wrap {
+        grid-template-columns: 1fr
+    }
+}
+
+/* ---- Project detail gallery ---- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--ring);
+}
+
+/* keep gallery usable on mobile */
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: 1fr
+    }
+}
+
+/* === Right pane card width (keep detail full-width) ======================== */
+.library-right .detail-card:not(.project-detail),
+.library-right .grid-card {
+    max-width: 980px;
+    /* same ‘specific width’ look as before */
+    margin: 0 auto 16px;
+}
+
+/* Scale that max width down on medium screens */
+@media (max-width: 1200px) {
+
+    .library-right .detail-card:not(.project-detail),
+    .library-right .grid-card {
+        max-width: 900px;
+    }
+}
+
+/* On tablets/phones, let cards breathe edge-to-edge with safe padding */
+@media (max-width: 900px) {
+    .library-split {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .library-left {
+        max-height: 260px;
+    }
+
+    .library-right .detail-card:not(.project-detail),
+    .library-right .grid-card {
+        max-width: 92vw;
+    }
+}
+
+/* === Mobile/Tablet dropdown =============================================== */
+.category-dropdown {
+    display: none;
+    /* hidden on desktop */
+    margin: 0 0 12px;
+}
+
+.category-dropdown label {
+    display: block;
+    font-weight: 700;
+    margin: 0 0 6px 2px;
+}
+
+.category-select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: color-mix(in oklab, var(--card) 92%, transparent);
+    color: var(--ink);
+    margin-bottom: 12px;
+}
+
+/* Hide sidebar and show dropdown below 900px */
+@media (max-width: 900px) {
+    .library-left {
+        display: none;
+    }
+
+    .category-dropdown {
+        display: block;
+        position: sticky;
+        top: 8px;
+        z-index: 2;
+    }
+}
+
+/* ===== Mobile toolbars ===================================================== */
+/* CATEGORY toolbar (All + Category views) */
+.mobile-catbar {
+    display: none;
+    margin: 0 0 12px;
+}
+
+.mobile-catbar label {
+    display: block;
+    font-weight: 700;
+    margin: 0 0 6px 2px;
+}
+
+/* PROJECT toolbar (Project view) */
+.mobile-projbar {
+    display: none;
+    margin: 0 0 12px;
+}
+
+.mobile-projbar label {
+    display: block;
+    font-weight: 700;
+    margin: 0 0 6px 2px;
+}
+
+/* shared controls */
+.toolbar-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.toolbar-select {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: color-mix(in oklab, var(--card) 92%, transparent);
+    color: var(--ink);
+}
+
+/* Show appropriate toolbar on small screens; sidebar stays hidden */
+@media (max-width: 900px) {
+    .library-left {
+        display: none;
+    }
+
+    .mobile-catbar,
+    .mobile-projbar {
+        display: block;
+        position: sticky;
+        top: 8px;
+        z-index: 2;
+    }
+}
+
+/* --- Simple grid gallery --- */
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.gallery img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--ring);
+}
+
+/* mobile: single column */
+@media (max-width: 900px){
+  .gallery{ grid-template-columns: 1fr; }
+  .gallery img{ height: 200px; }
+}
+@media (max-width: 600px){
+  .gallery img{ height: 180px; }
+}
+
+
+/* Phone polish */
+@media (max-width: 600px) {
+    .library-header {
+        padding: 10px 12px;
+    }
+
+    .acc-head {
+        padding: 10px;
+    }
+
+    .acc-item {
+        padding: 8px 10px;
+    }
+
+    .grid-wrap {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
