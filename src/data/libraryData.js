@@ -2,6 +2,52 @@
 // Single source of truth for the Library page.
 // Each project can include `images: [...]` (2–4 URLs). Library.js will render them.
 
+// const ANALYSIS = {
+//   ACCIDENT_ANALYSIS: {},
+//   AIRLINE_ANALYSIS: {},
+//   GROCERY_ANALYSIS: {},
+//   WEB_AGENCY_ANALYSIS: {},
+//   MYANMAR_SALES_ANALYSIS: {},
+//   DIWALI_SALES_AGENCY_ANALYSIS: {},
+//   PRODUCT_REVIEW_ANALYSIS: {},
+//   SUPERSTORE_SALES_ANALYSIS: {},
+// }
+
+// const VISUALIZATION = {
+//   ACCIDENT_VIS: {},
+//   AIRLINE_VIS: {},
+//   DIWALI_SALES_AGENCY_VIS: {},
+//   EMPLOYEE_VIS: {},
+//   GROCERY_VIS: {},
+//   MYANMAR_SALES_VIS: {},
+//   SHOPPING_TREND_VIS: {},
+//   SUPERSTORE_SALES_VIS: {},
+//   WEB_AGENCY_VIS: {},
+// }
+
+// const MINING ={
+//   CLUSTERING_PROJECT: {},
+//   SVM_PROJECT: {},
+//   IRIS_CLASSIFICATION_PROJECT: {},
+//   WEATHER_HMM_PROJECT: {},
+// }
+
+// const MACHINE_LEARNING = {
+//   AMAZON_REVIEW_MODEL: {},
+//   PRODUCT_REVIEW_MODEL: {},
+//   MOVIE_RATING_MODEL: {},
+//   TITANIC_SURVIVAL_MODEL: {},
+// }
+
+// const NUERAL_NETWORK = {
+//   CLOTHING_NN: {},
+//   DOGS_CATS_CNN: {},
+// }
+
+// const REINFORCEMENT_LEARNING = {
+
+// }
+
 const BASE = {
   SALES_EDA: {
     title: "Sales Dashboard — Exploratory Data Analysis",
