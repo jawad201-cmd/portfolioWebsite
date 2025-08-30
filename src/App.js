@@ -8,11 +8,17 @@ import ContactPage from "./pages/ContactPage";
 import { mountReveal } from "./utils/reveal"; // scroll/entrance effects
 import "./App.css";
 
+
+
+
 /** Home page layout (hero + about + projects). */
 function HomeLayout() {
   // One-time mount hook for reveal animations
   useEffect(() => { mountReveal(); }, []);
-
+  useEffect(() => {
+    document.title = "Home • ML/DS Portfolio Website";
+  }, []);
+  
   return (
     <div className="viewport">
       <Hero />

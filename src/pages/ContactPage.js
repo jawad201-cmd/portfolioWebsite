@@ -1,4 +1,5 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./ContactPage.css";
 
 const TO_EMAIL = "youremail@example.com"; // ← change to your address
@@ -20,12 +21,16 @@ export default function ContactPage() {
     form.reset();
   }, []);
 
+  useEffect(() => {
+    document.title = "Contact • ML/DS Portfolio Website";
+  }, []);
+
   return (
     <div className="contact-viewport">
       <header className="contact-header">
         <h1 className="contact-title">Contact</h1>
         <div className="contact-actions">
-          <a className="btn" href="/">Home</a>
+          <Link className="btn" to="/">Home</Link>
         </div>
       </header>
 

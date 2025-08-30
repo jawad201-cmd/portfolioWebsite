@@ -121,13 +121,6 @@
     overflow: auto
 }
 
-/* constrain cards on the right pane (except the project detail card) */
-.library-right .detail-card:not(.project-detail),
-.library-right .grid-card {
-    max-width: 980px;
-    /* adjust if you want narrower/wider */
-}
-
 /* shared card look */
 .detail-card,
 .grid-card {
@@ -136,6 +129,26 @@
     border-radius: 16px;
     box-shadow: var(--ring);
     padding: 22px;
+    /* max-width: 980px; */
+}
+
+#detail-card-display {
+    display: flex;
+}
+
+#detail-infom{
+    width: 60%;
+    margin: 0px 10px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+    #detail-card-display {
+        flex-direction: column;
+    }
+    #detail-infom {
+        width: auto;
+    }
 }
 
 /* ALL view: category cards are fully clickable */
@@ -171,7 +184,7 @@
 /* Category view grid */
 .grid-wrap {
     display: grid;
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 0fr));
     gap: 16px;
 }
 
@@ -189,9 +202,9 @@
 
 /* multi-category stack on ALL view */
 .stack {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 16px
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 /* responsive */
@@ -229,16 +242,8 @@
 /* keep gallery usable on mobile */
 @media (max-width: 900px) {
     .gallery {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
-}
-
-/* === Right pane card width (keep detail full-width) ======================== */
-.library-right .detail-card:not(.project-detail),
-.library-right .grid-card {
-    max-width: 980px;
-    /* same ‘specific width’ look as before */
-    margin: 0 auto 16px;
 }
 
 /* Scale that max width down on medium screens */
@@ -362,28 +367,93 @@
 }
 
 /* --- Simple grid gallery --- */
-.gallery{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 14px;
-}
-.gallery img{
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: var(--ring);
+/* Gallery container with scroll */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    /* Two-column grid */
+    gap: 12px;
+    margin-top: 14px;
+    width: 40%;
+    height: auto;
+    /* Set specific height for the container */
+    overflow-y: auto;
+    /* Make it scrollable */
+    padding: 10px;
 }
 
-/* mobile: single column */
-@media (max-width: 900px){
-  .gallery{ grid-template-columns: 1fr; }
-  .gallery img{ height: 200px; }
+.gallery img {
+    width: 100%;
+    height: 240px;
+    /* Set a fixed height for images */
+    object-fit: cover;
+    /* Ensure images are scaled properly */
+    border-radius: 12px;
+    box-shadow: var(--ring);
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition for scaling */
 }
-@media (max-width: 600px){
-  .gallery img{ height: 180px; }
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        width: auto;
+
+    }
 }
+
+/* Modal for the enlarged image */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    /* Dark background */
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Enlarged image style with animation */
+.enlarged-image {
+    width: 80%;
+    /* 80% size of the screen */
+    height: 80%;
+    transition: transform 0.3s ease-in-out;
+    cursor: zoom-out;
+    animation: zoomIn 0.3s ease-out;
+    /* Animation when clicked */
+}
+
+/* Animation for fading in the modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for zooming in the image */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
 
 
 /* Phone polish */

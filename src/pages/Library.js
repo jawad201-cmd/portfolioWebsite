@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect, useCallback } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Library.css";
 import data from "../data/libraryData";
 
@@ -7,6 +7,12 @@ import data from "../data/libraryData";
 export default function Library() {
     const location = useLocation();
     const navigate = useNavigate();
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [isImageOpen, setIsImageOpen] = useState(false);
+
+    useEffect(() => {
+        document.title = "Projects • ML/DS Portfolio Website";
+    }, []);
 
     /** Static sections */
     const sections = useMemo(
@@ -134,8 +140,8 @@ export default function Library() {
                 <ul className="title-list">
                     {section.items.map((it) => (
                         <li key={it.id}>
-                            <span
-                                className="project-title-link"
+                            <article
+                                className="grid-card clickable-card"
                                 role="button"
                                 tabIndex={0}
                                 title="Open project"
@@ -147,8 +153,11 @@ export default function Library() {
                                     }
                                 }}
                             >
-                                {it.title}
-                            </span>
+                                <h3 className="grid-title">{it.title}</h3>
+                                {it.tech?.length > 0 && (
+                                    <p className="grid-tech tech-stack">{it.tech.join(" • ")}</p>
+                                )}
+                            </article>
                         </li>
                     ))}
                 </ul>
@@ -168,7 +177,7 @@ export default function Library() {
                 onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && openProject()}
             >
                 <h3 className="grid-title">{item.title}</h3>
-                {item.description && <p className="muted">{item.description}</p>}
+                {item.subtitle && <p className="muted">{item.subtitle}</p>}
                 {item.tech?.length > 0 && (
                     <p className="grid-tech tech-stack">{item.tech.join(" • ")}</p>
                 )}
@@ -194,6 +203,18 @@ export default function Library() {
             </div>
         </div>
     );
+
+    // Open image in modal
+    const handleImageClick = (src) => {
+        setSelectedImage(src);
+        setIsImageOpen(true); // Show the modal and enlarge image
+    };
+
+    // Close modal and reset image
+    const handleCloseModal = () => {
+        setIsImageOpen(false);
+        setSelectedImage(null); // Close modal and reset the image state
+    };
 
     /* ---------- derived values ---------- */
 
@@ -227,8 +248,8 @@ export default function Library() {
                     Project Library
                 </h1>
                 <div style={{ display: "flex", gap: 10 }}>
-                    <a className="btn" href="/">Home</a>
-                    <a className="btn" href="/contact">Contact</a>
+                    <Link className="btn" to="/">Home</Link>
+                    <Link className="btn" to="/contact">Contact</Link>
                 </div>
             </header>
 
@@ -334,48 +355,55 @@ export default function Library() {
                     )}
 
                     {view === "project" && selected && (
-                        <article className="detail-card project-detail">
-                            <h2>{selected.title}</h2>
-                            <p className="muted">{selected.subtitle}</p>
+                        <article className="detail-card project-detail" id="detail-card-display">
+                            <div id="detail-infom">
+                                <h2>{selected.title}</h2>
+                                <p className="muted">{selected.subtitle}</p>
 
-                            <div className="detail-meta">
-                                <div>
-                                    <strong>Tech:</strong>{" "}
-                                    <span className="tech-stack">{selected.tech.join(" • ")}</span>
+                                <div className="detail-meta">
+                                    <div>
+                                        <strong>Tech:</strong>{" "}
+                                        <span className="tech-stack">{selected.tech.join(" • ")}</span>
+                                    </div>
+                                    {selected.metrics && <div className="muted">{selected.metrics}</div>}
                                 </div>
-                                {selected.metrics && <div className="muted">{selected.metrics}</div>}
+
+                                <p className="detail-body">{selected.description}</p>
+
+                                {selected.highlights?.length > 0 && (
+                                    <ul className="detail-list">
+                                        {selected.highlights.map((h, i) => <li key={i}>{h}</li>)}
+                                    </ul>
+                                )}
+                                {/* --- GitHub Button --- */}
+                                <div className="detail-actions" style={{ marginTop: 14 }}>
+                                    {selected.github && (
+                                        <a className="btn" href={selected.github} target="_blank" rel="noopener noreferrer">
+                                            View in GitHub
+                                        </a>
+                                    )}
+                                </div>
                             </div>
-
-                            <p className="detail-body">{selected.description}</p>
-
-                            {selected.highlights?.length > 0 && (
-                                <ul className="detail-list">
-                                    {selected.highlights.map((h, i) => <li key={i}>{h}</li>)}
-                                </ul>
-                            )}
-
                             {/* --- Simple Image Gallery --- */}
+                            {/* Gallery section */}
                             <section className="gallery" aria-label="Project screenshots">
-                                {(selected.images?.length ? selected.images : getFallbackImages())
-                                    .slice(0, 4) // show up to 4 if provided
-                                    .map((src, i) => (
-                                        <img
-                                            key={i}
-                                            src={src}
-                                            alt={`${selected.title} screenshot ${i + 1}`}
-                                            loading="lazy"
-                                        />
-                                    ))}
+                                {images.map((src, index) => (
+                                    <img
+                                        key={index}
+                                        src={src}
+                                        alt={`Project screenshot ${index + 1}`}
+                                        loading="lazy"
+                                        onClick={() => handleImageClick(src)} // Trigger image click event
+                                    />
+                                ))}
                             </section>
 
-                            {/* --- GitHub Button --- */}
-                            <div className="detail-actions" style={{ marginTop: 14 }}>
-                                {selected.github && (
-                                    <a className="btn" href={selected.github} target="_blank" rel="noopener noreferrer">
-                                        View in GitHub
-                                    </a>
-                                )}
-                            </div>
+                            {/* Modal for enlarged image */}
+                            {isImageOpen && (
+                                <div className="image-modal" onClick={handleCloseModal}>
+                                    <img src={selectedImage} alt="Enlarged View" className="enlarged-image" />
+                                </div>
+                            )}
                         </article>
                     )}
 
