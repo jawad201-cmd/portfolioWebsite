@@ -167,24 +167,271 @@ const ANALYSIS = {
   },
 }
 
-// const VISUALIZATION = {
-//   ACCIDENT_VIS: {},
-//   AIRLINE_VIS: {},
-//   DIWALI_SALES_AGENCY_VIS: {},
-//   EMPLOYEE_VIS: {},
-//   GROCERY_VIS: {},
-//   MYANMAR_SALES_VIS: {},
-//   SHOPPING_TREND_VIS: {},
-//   SUPERSTORE_SALES_VIS: {},
-//   WEB_AGENCY_VIS: {},
-// }
+//===================================================================================================================================
+const VISUALIZATION = {
+  ACCIDENT_VIS: {
+    title: "Data Visualization of US Vehicle Accident Dataset",
+    subtitle: "Visualized multi-decade accident records to uncover trends and road safety insights",
+    tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+    metrics: "Comprehensive visualization of 1975–2021 FARS dataset from authentic US agency",
+    description:
+      "The project focused on visualizing a US vehicle accident dataset spanning from 1975 to 2021 to uncover trends and provide actionable road safety insights. Using Python, Pandas, and powerful visualization libraries like Matplotlib and Seaborn, the data was transformed into interactive visualizations that made complex accident data more accessible. The dataset, sourced directly from the official Fatality Analysis Reporting System (FARS), included accident details such as damage location, number of injured passengers, car model, state of accident, and time of incident. The goal was to visually present patterns and correlations to enhance the understanding of accident frequency, severity, and road safety factors.",
+    highlights: [
+      "Visualized accident trends using line charts, bar graphs, and heatmaps",
+      "Created interactive dashboards to explore the relationship between factors like location, time, and accident severity",
+      "Utilized color-coding and overlays to highlight high-risk areas and peak accident times",
+      "Employed time-series visualizations to track accident trends over multiple decades",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  AIRLINE_VIS: {
+    title: "Data Visualization of Airline Dataset",
+    subtitle: "Visualized airline data with interactive dashboards, charts, and scenario-driven insights",
+    tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+    metrics: "Applied interactive visualizations, charts, and predictive insights to explore airline data",
+    description:
+      "This project focused on visualizing the airline dataset using Python and data visualization libraries like Matplotlib and Seaborn. Through various interactive charts, graphs, and dashboards, the data was presented in a visually compelling way, highlighting key metrics such as cabin classes, review scores, and service quality. Scenario-driven insights were drawn from visual trends, providing a deeper understanding of airline service patterns and performance. The goal was to use data visualization to facilitate quick insights into airline operations and performance, with an emphasis on accessibility and predictive patterns.",
+    highlights: [
+      "Created interactive dashboards to explore cabin services and review scores",
+      "Visualized key airline service metrics using bar charts, line graphs, and heatmaps",
+      "Developed scenario-based visualizations to highlight performance trends and predictive insights",
+      "Used Seaborn to generate insightful visual correlations between service variables",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  DIWALI_SALES_AGENCY_VIS: {
+    title: "Data Visualization of Diwali Sales Dataset",
+    subtitle: "Visualized customer shopping behavior to uncover demographic insights",
+    tech: ["Python", "Pandas", "Seaborn"],
+    metrics: "Unveiled purchasing patterns across age, gender, and occupation groups through interactive visualizations",
+    description:
+      "This project focused on visualizing a Diwali sales dataset to reveal insights into customer shopping behavior. Using Python and popular visualization libraries like Matplotlib and Seaborn, various charts and graphs were created to highlight trends in demographics such as age group, marital status, and occupation. The data visualization emphasized behavioral patterns in shopping activity, and one key finding showed that women shop approximately 2.3 times more than men, offering valuable insights for targeted marketing strategies. Interactive dashboards were designed to explore these insights in an easily digestible format.",
+    highlights: [
+      "Cleaned and visualized Diwali sales data using Python and visualization tools",
+      "Created interactive charts to analyze shopping trends by age, gender, and occupation",
+      "Highlighted purchasing patterns, with a focus on gender-based shopping behavior",
+      "Designed visual reports to support targeted marketing strategies",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  EMPLOYEE_VIS: {},
+  GROCERY_VIS: {
+    title: "Data Visualization of Grocery Bills Dataset",
+    subtitle: "Visualized store-product relationships and customer decision patterns using ERD and Decision Tree",
+    tech: ["Python", "Pandas", "Seaborn"],
+    metrics: "Created visualizations with ERD and decision tree for actionable data insights",
+    description:
+      "This project involved visualizing a grocery bills dataset to explore store–product relationships and customer decision patterns. Using Python and visualization tools like Matplotlib and Seaborn, an Entity Relationship Diagram (ERD) was created to map one-to-many relationships between stores and products. A Decision Tree was visualized to analyze and predict customer purchasing behavior. The project also utilized graphs to support these visualizations, offering insights into how store descriptions, product prices, and product details influence customer decisions. The goal was to use data visualizations to derive actionable insights and facilitate data-driven decision-making.",
+    highlights: [
+      "Designed an ERD to visually represent store-product relationships",
+      "Created a Decision Tree visualization to predict customer purchase decisions",
+      "Developed graphs and charts to support decision-making processes",
+      "Applied Seaborn and Matplotlib for clear, intuitive visual insights into the data",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  MYANMAR_SALES_VIS: {
+    title: "Data Visualization of Myanmar Store Sales",
+    subtitle: "Visualized multi-city retail sales data to uncover patterns in customer behavior and product demand",
+    tech: ["Python", "Pandas", "Seaborn"],
+    metrics: "Comprehensive visual analysis of Super Store sales data (Jan–Mar 2019)",
+    description:
+      "This project focused on visualizing retail sales data from Super Store across multiple cities in Myanmar for January to March 2019. Using Python and visualization tools like Matplotlib and Seaborn, various charts and graphs were created to explore total sales, gender distribution, payment preferences, customer ratings, and city-wise performance. Visualizations were key in uncovering customer behavior patterns and product demand insights. A major finding highlighted the Food & Beverages category as the top-performing product segment, reflecting strong market demand and customer preference. The project utilized interactive dashboards and visual reports to provide a clear and actionable understanding of the sales data.",
+    highlights: [
+      "Created visualizations to analyze sales performance by city, gender, and payment method",
+      "Identified Food & Beverages as the top-performing product category through interactive charts",
+      "Developed time-series visualizations to track sales trends over the three months",
+      "Utilized Seaborn and Matplotlib to create insightful heatmaps and bar graphs for data exploration",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  SHOPPING_TREND_VIS: {
+    title: "Data Visualization of US Clothing Store Shopping Trends",
+    subtitle: "Visualized shopping trends to uncover customer preferences and purchasing patterns",
+    tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+    metrics: "Created a comprehensive dashboard showcasing customer demographics and purchase behavior",
+    description:
+      "This project focused on visualizing shopping trends at a US clothing store, with a particular emphasis on customer ratings, product sizes, categories, and payment preferences. Using Python and data visualization libraries like Matplotlib and Seaborn, an interactive dashboard was created to provide insights into customer demographics such as age and gender. The dashboard also showcased payment preferences, helping to understand the broader shopping behavior. Various types of graphs, including bar charts, pie charts, and heatmaps, were used to highlight key data points. One notable insight revealed that Olive was the most frequently purchased color, illustrating customer preferences for certain styles and colors.",
+    highlights: [
+      "Created an interactive dashboard to visualize shopping trends by age, gender, and payment method",
+      "Analyzed ratings, product size, and category preferences using various types of graphs",
+      "Unveiled key insights such as the popularity of the color Olive in clothing purchases",
+      "Utilized dynamic visualizations to help uncover broader customer behavior patterns and preferences",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  SUPERSTORE_SALES_VIS: {
+    title: "Data Visualization of Super Store Sales Data",
+    subtitle: "Visualized sales, profit, and category-level trends across U.S. states",
+    tech: ["Python", "Pandas", "Seaborn"],
+    metrics: "Created dynamic visualizations for sales, profit margins, and category performance across states",
+    description:
+      "This project involved visualizing Super Store sales data from various U.S. states to uncover key trends in sales, profit margins, and product categories. After a thorough data-cleaning phase to ensure data accuracy and consistency, the project utilized Python and visualization libraries like Matplotlib and Seaborn to create interactive charts and graphs. These visualizations highlighted relationships between product subcategories, shipping modes, and sales figures. Notably, Washington, D.C. emerged as the top-performing region, with the highest sales and profits, indicating a strong market presence. Through dynamic charts, the project provided actionable insights into regional market behavior and sales performance.",
+    highlights: [
+      "Cleaned and prepared the dataset for detailed state-level sales analysis",
+      "Created visualizations to highlight trends in subcategories, shipping modes, and sales figures",
+      "Identified Washington, D.C. as the top-performing state in sales and profits using interactive bar charts and heatmaps",
+      "Developed visual insights to uncover anomalies and relationships between various sales factors",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  WEB_AGENCY_VIS: {
+    title: "Data Visualization of Web Agency Financials",
+    subtitle: "Visualized financial KPIs and profitability insights using Excel and interactive charts",
+    tech: ["Python", "Excel", "VBA", "Matplotlib", "Seaborn"],
+    metrics: "Created dynamic financial dashboards for real-time profitability insights",
+    description:
+      "This project focused on visualizing a web agency's financial dataset using Excel and interactive data visualization tools. With the help of VBA, pivot tables, and Excel formulas, the financial data (including net revenue, gross profit, and COGs) was transformed into insightful charts and dashboards. The goal was to create a responsive financial sheet capable of visualizing key performance indicators (KPIs) such as Total COGs, Net Revenue, and Total Investment in real-time. Dynamic charts and graphs were used to track agency performance and profitability trends, making financial decision-making more accessible and data-driven.",
+    highlights: [
+      "Created dynamic visual dashboards to display financial metrics (Net Revenue, Gross Profit, COGs)",
+      "Automated KPI calculations with Excel VBA and visualized data using charts and graphs",
+      "Built interactive visualizations for decision-making, highlighting trends in profitability",
+      "Integrated pivot tables with visual elements for detailed, real-time financial reporting",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+}
 
-// const MINING ={
-//   CLUSTERING_PROJECT: {},
-//   SVM_PROJECT: {},
-//   IRIS_CLASSIFICATION_PROJECT: {},
-//   WEATHER_HMM_PROJECT: {},
-// }
+//===================================================================================================================================
+ const MINING ={
+  CUSTOMER_SEGMENTATION_CLUSTERING: {
+    title: "Customer Segmentation Using Clustering Algorithms",
+    subtitle: "Performed RFM-based customer segmentation using K-Means, DBSCAN, PCA, and cluster evaluation techniques",
+    tech: ["Python", "Pandas", "Scikit-Learn", "Seaborn", "Matplotlib"],
+    metrics: "Applied K-Means, DBSCAN, PCA, Elbow Method, Silhouette Score to segment customers and detect outliers",
+    description:
+      "This project focuses on customer segmentation using clustering techniques on the Online Retail dataset. RFM features (Recency, Frequency, Monetary) were engineered and used to group customers into meaningful segments. Multiple clustering approaches were applied, including K-Means and DBSCAN, and their outputs were compared based on performance, interpretability, and ability to detect outliers. To identify the optimal value of K, the Elbow Method and Silhouette Score were used, both suggesting K=2. The K-Means results were visualized using PCA to reduce the dimensionality to 2D, enabling clear visualization of customer segments. A K-distance graph was used to determine the appropriate parameters for DBSCAN, revealing density-based structures and highlighting noise points. DBSCAN successfully identified high-density customer groups while isolating outliers, offering deeper insight into customer behavior differences.The final comparison between K-Means and DBSCAN revealed valuable distinctions: K-Means formed clean spherical clusters, while DBSCAN captured density variations, outliers, and non-linear cluster shapes.",
+    highlights: [
+      "Applied Elbow Method and Silhouette Score to determine optimal cluster number (K=2)",
+      "Performed K-Means Clustering and visualized results through PCA 2D projection",
+      "Generated K-Distance graph to tune DBSCAN parameters (eps, min_samples)",
+      "Implemented DBSCAN to detect arbitrary-shaped clusters and outliers (54 noise points, ~1.2%)",
+      "Compared algorithm behavior: number of clusters, noise handling, and cluster geometry",
+      "Analyzed cluster characteristics using RFM feature means to identify customer spending behavior",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  SVM_PROJECT: {
+    title: "Classification of Customer Value Using SVM and PCA",
+    subtitle: "Built Linear and RBF SVM models with PCA-based visualization and ROC evaluation",
+    tech: ["Python", "Scikit-Learn", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+    metrics: "Achieved up to 99.8% test accuracy using optimized SVM models with PCA-based decision boundaries and ROC curve analysis",
+    description:
+      "This project focuses on classifying customers into High-Value and Low-Value groups using Support Vector Machines (SVM). PCA was applied to reduce high-dimensional features into 2D space, enabling clear visualization of the decision boundaries for both Linear and RBF SVM models. Grid search with cross-validation was used to determine the best hyperparameters for both models. The Linear SVM demonstrated strong performance on linearly separable components, while the RBF SVM captured more complex, non-linear relationships within the customer dataset. The project also included a comprehensive comparison of all classification models using ROC curves, where the RBF SVM achieved the highest AUC, followed closely by Gaussian Naive Bayes and the Linear SVM model.",
+    highlights: [
+      "Applied PCA to visualize SVM decision boundaries in 2D",
+      "Trained Linear SVM and RBF SVM, achieving up to 99.8% test accuracy",
+      "Used GridSearchCV to tune hyperparameters such as C and Gamma",
+      "Visualized decision boundaries showing linear vs. non-linear separability",
+      "Plotted ROC curves for all models, with RBF SVM achieving AUC = 1.000",
+      "Generated complete classification reports with precision, recall, and F1-scores",
+      "Created performance comparison table for Linear SVM vs. RBF SVM",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  IRIS_CLASSIFICATION_PROJECT: {
+    title: "Deep Learning Classification on Iris Dataset",
+    subtitle: "Built a neural network to classify flower species using TensorFlow and feature-scaled inputs",
+    tech: ["Python", "TensorFlow", "Pandas", "NumPy", "Scikit-Learn"],
+    metrics: "Achieved 60% test accuracy using a 3-layer dense neural network trained on Iris flower measurements",
+    description:
+      "This project implements a deep learning classification model using the Iris dataset, one of the most well-known datasets in machine learning. The dataset was loaded and processed using Pandas, with features including Sepal Length, Sepal Width, Petal Length, and Petal Width. The target variable represented three species of Iris flowers. A 3-layer Deep Neural Network (DNN) was built using TensorFlow’s Keras API. The model architecture consisted of ReLU-activated dense layers and a final softmax layer for multi-class prediction. The training process involved 50 epochs, with validation splitting used to monitor overfitting. After training, the model achieved 60% accuracy on the test dataset. A custom prediction pipeline was also created. New samples were scaled using StandardScaler before being passed into the model, ensuring consistent input distribution. The predicted species label was extracted using np.argmax(). This demonstrated how the model could infer species from previously unseen measurements.",
+    highlights: [
+      "Loaded and processed Iris dataset using Pandas and TensorFlow dataset utilities",
+      "Built a 3-layer Keras Sequential DNN for multi-class flower classification",
+      "Trained the model for 50 epochs with validation monitoring",
+      "Evaluated model performance, achieving 60% test accuracy",
+      "Implemented a complete prediction workflow including feature scaling and inference",
+      "Predicted species label for new flower measurements using softmax classification",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  WEATHER_HMM_PROJECT: {
+    title: "Hidden Markov Model (HMM) Sequence Modeling Using TensorFlow Probability",
+    subtitle: "Implemented a probabilistic Hidden Markov Model to generate state-dependent observations over time",
+    tech: ["Python", "TensorFlow", "TensorFlow Probability (TFP)", "NumPy"],
+    metrics: "Built and evaluated a 2-state HMM with categorical transitions and Gaussian observation distributions",
+    description: `
+    This project demonstrates the implementation of a Hidden Markov Model (HMM) using TensorFlow Probability.
+    The model simulates a sequence of hidden states and their corresponding observable outputs over multiple time steps. The HMM consists of:
+    • Initial State Distribution : Defines the probability of starting in each hidden state  
+    • Transition Distribution : Specifies the likelihood of switching from one hidden state to another  
+    • Observation Distribution : Models the observed data using Gaussian distributions dependent on the hidden state
+    Two hidden states were defined with distinct Gaussian observation patterns, allowing the model to produce sequences that reflect characteristic means and variances for each state.
+    TensorFlow Probability of HiddenMarkovModel class was used to compute the expected mean of the observation sequence over 7 time steps, and the final predicted mean was computed in a TF session.
+    This project highlights probabilistic programming, state-space modeling, and sequence estimation using modern deep-learning libraries.
+    `,
+    highlights: [
+      "Built a 2-state Hidden Markov Model using TensorFlow Probability",
+      "Defined categorical initial and transition distributions for hidden states",
+      "Used Gaussian (Normal) distributions for modeling observable outputs",
+      "Generated a 7-step predicted mean sequence using the HMM",
+      "Demonstrated the use of TensorFlow v1 compatibility mode to run probability computations",
+      "Showcased foundational concepts of time-series modeling and latent variable structures",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+ }
 
 // const MACHINE_LEARNING = {
 //   AMAZON_REVIEW_MODEL: {},
@@ -329,13 +576,21 @@ const data = {
   ],
 
   visualization: [
-    { id: "vs-1", ...BASE.CHURN_MODEL },
-    { id: "vs-2", ...BASE.RECSYS_CONTENT },
+    { id: "vs-1", ...VISUALIZATION.ACCIDENT_VIS },
+    { id: "vs-1", ...VISUALIZATION.AIRLINE_VIS },
+    { id: "vs-1", ...VISUALIZATION.DIWALI_SALES_AGENCY_VIS },
+    { id: "vs-1", ...VISUALIZATION.EMPLOYEE_VIS },
+    { id: "vs-1", ...VISUALIZATION.MYANMAR_SALES_VIS },
+    { id: "vs-1", ...VISUALIZATION.SHOPPING_TREND_VIS },
+    { id: "vs-1", ...VISUALIZATION.SUPERSTORE_SALES_VIS },
+    { id: "vs-1", ...VISUALIZATION.WEB_AGENCY_VIS },
   ],
 
   mining: [
-    { id: "dm-1", ...BASE.CHURN_MODEL },
-    { id: "dm-2", ...BASE.RECSYS_CONTENT },
+    { id: "dm-1", ...MINING.CUSTOMER_SEGMENTATION_CLUSTERING },
+    { id: "dm-1", ...MINING.SVM_PROJECT },
+    { id: "dm-1", ...MINING.IRIS_CLASSIFICATION_PROJECT },
+    { id: "dm-1", ...MINING.WEATHER_HMM_PROJECT },
   ],
 
   ml: [
