@@ -577,20 +577,20 @@ const data = {
 
   visualization: [
     { id: "vs-1", ...VISUALIZATION.ACCIDENT_VIS },
-    { id: "vs-1", ...VISUALIZATION.AIRLINE_VIS },
-    { id: "vs-1", ...VISUALIZATION.DIWALI_SALES_AGENCY_VIS },
-    { id: "vs-1", ...VISUALIZATION.EMPLOYEE_VIS },
-    { id: "vs-1", ...VISUALIZATION.MYANMAR_SALES_VIS },
-    { id: "vs-1", ...VISUALIZATION.SHOPPING_TREND_VIS },
-    { id: "vs-1", ...VISUALIZATION.SUPERSTORE_SALES_VIS },
-    { id: "vs-1", ...VISUALIZATION.WEB_AGENCY_VIS },
+    { id: "vs-2", ...VISUALIZATION.AIRLINE_VIS },
+    { id: "vs-3", ...VISUALIZATION.DIWALI_SALES_AGENCY_VIS },
+    { id: "vs-4", ...VISUALIZATION.EMPLOYEE_VIS },
+    { id: "vs-5", ...VISUALIZATION.MYANMAR_SALES_VIS },
+    { id: "vs-6", ...VISUALIZATION.SHOPPING_TREND_VIS },
+    { id: "vs-7", ...VISUALIZATION.SUPERSTORE_SALES_VIS },
+    { id: "vs-8", ...VISUALIZATION.WEB_AGENCY_VIS },
   ],
 
   mining: [
     { id: "dm-1", ...MINING.CUSTOMER_SEGMENTATION_CLUSTERING },
-    { id: "dm-1", ...MINING.SVM_PROJECT },
-    { id: "dm-1", ...MINING.IRIS_CLASSIFICATION_PROJECT },
-    { id: "dm-1", ...MINING.WEATHER_HMM_PROJECT },
+    { id: "dm-2", ...MINING.SVM_PROJECT },
+    { id: "dm-3", ...MINING.IRIS_CLASSIFICATION_PROJECT },
+    { id: "dm-4", ...MINING.WEATHER_HMM_PROJECT },
   ],
 
   ml: [
