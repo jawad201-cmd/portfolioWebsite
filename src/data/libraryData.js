@@ -229,7 +229,27 @@ const VISUALIZATION = {
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
     ],
   },
-  EMPLOYEE_VIS: {},
+  EMPLOYEE_VIS: {
+    title: "Tableau Dashboard for Employee Training Performance",
+    subtitle: "Visualized department-wise training activity, costs, and performance metrics using interactive Tableau dashboards",
+    tech: ["Python", "Pandas", "Seaborn", "Tableau"],
+    metrics: "Created multi-chart visual dashboards analyzing training types, departmental participation, and cost distribution",
+    description:
+      "This project focuses on designing an interactive Tableau dashboard to analyze employee training performance across different departments. Multiple data entities—including training types, departments, training duration, employee participation, and training cost—were used to build meaningful visual insights. A variety of chart types were incorporated, such as bar charts, pie charts, heatmaps, and trend lines, enabling a comprehensive understanding of training behavior across the organization. The visual layout was designed to emphasize patterns in training frequency, cost allocation, and departmental engagement. One key insight revealed that the IT department participates in training programs more than any other department, highlighting its strong focus on skill development.",
+    highlights: [
+      "Built an interactive Tableau dashboard for employee training analytics",
+      "Visualized metrics such as training type, department involvement, and training cost",
+      "Used multiple chart types to maximize interpretability and insight extraction",
+      "Identified IT as the department with the highest training participation",
+      "Designed a clean, insight-driven layout for HR and management decision-making",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
   GROCERY_VIS: {
     title: "Data Visualization of Grocery Bills Dataset",
     subtitle: "Visualized store-product relationships and customer decision patterns using ERD and Decision Tree",
@@ -254,7 +274,7 @@ const VISUALIZATION = {
     title: "Data Visualization of Myanmar Store Sales",
     subtitle: "Visualized multi-city retail sales data to uncover patterns in customer behavior and product demand",
     tech: ["Python", "Pandas", "Seaborn"],
-    metrics: "Comprehensive visual analysis of Super Store sales data (Jan–Mar 2019)",
+    metrics: "Comprehensive visual analysis of Super Store sales data (Jan to Mar 2019)",
     description:
       "This project focused on visualizing retail sales data from Super Store across multiple cities in Myanmar for January to March 2019. Using Python and visualization tools like Matplotlib and Seaborn, various charts and graphs were created to explore total sales, gender distribution, payment preferences, customer ratings, and city-wise performance. Visualizations were key in uncovering customer behavior patterns and product demand insights. A major finding highlighted the Food & Beverages category as the top-performing product segment, reflecting strong market demand and customer preference. The project utilized interactive dashboards and visual reports to provide a clear and actionable understanding of the sales data.",
     highlights: [
@@ -580,10 +600,11 @@ const data = {
     { id: "vs-2", ...VISUALIZATION.AIRLINE_VIS },
     { id: "vs-3", ...VISUALIZATION.DIWALI_SALES_AGENCY_VIS },
     { id: "vs-4", ...VISUALIZATION.EMPLOYEE_VIS },
-    { id: "vs-5", ...VISUALIZATION.MYANMAR_SALES_VIS },
-    { id: "vs-6", ...VISUALIZATION.SHOPPING_TREND_VIS },
-    { id: "vs-7", ...VISUALIZATION.SUPERSTORE_SALES_VIS },
-    { id: "vs-8", ...VISUALIZATION.WEB_AGENCY_VIS },
+    { id: "vs-5", ...VISUALIZATION.GROCERY_VIS },
+    { id: "vs-6", ...VISUALIZATION.MYANMAR_SALES_VIS },
+    { id: "vs-7", ...VISUALIZATION.SHOPPING_TREND_VIS },
+    { id: "vs-8", ...VISUALIZATION.SUPERSTORE_SALES_VIS },
+    { id: "vs-9", ...VISUALIZATION.WEB_AGENCY_VIS },
   ],
 
   mining: [
