@@ -453,18 +453,144 @@ const VISUALIZATION = {
   },
  }
 
-// const MACHINE_LEARNING = {
-//   AMAZON_REVIEW_MODEL: {},
-//   PRODUCT_REVIEW_MODEL: {},
-//   MOVIE_RATING_MODEL: {},
-//   TITANIC_SURVIVAL_MODEL: {},
-// }
+//===================================================================================================================================
+const MACHINE_LEARNING = {
+  AMAZON_REVIEW_MODEL: {
+    title: "Product Review Topic Modeling and Keyword Extraction Using BERTopic",
+    subtitle: "Identified key themes in positive and negative product reviews using transformer-based topic modeling",
+    tech: ["Python", "BERTopic", "Transformers", "TF-IDF", "Pandas"],
+    metrics: "Extracted high-impact keywords for good vs. bad reviews to support product quality and customer sentiment insights",
+    description: `
+    This project applies BERTopic, a transformer-based topic modeling approach, to analyze product reviews and identify which keywords commonly appear in positive versus negative feedback. The dataset of customer reviews underwent preprocessing and embedding generation, after which BERTopic was used to cluster reviews into meaningful themes.
+    The model extracted dominant keywords from each topic, allowing clear differentiation between review sentiments. High-frequency positive terms such as good, great, cutting, scissors reflected user satisfaction, while words like broke, bad, poor indicated quality issues or negative experiences. This approach enabled the automatic detection of sentiment-oriented themes without manually labeled data.
+    The insights reveal how real customers describe their experiences, helping guide product improvements, quality control, and customer communication strategies.
+    `,
+    highlights: [
+      "Implemented BERTopic to cluster product reviews into interpretable themes",
+      "Extracted keyword patterns for both good and bad reviews",
+      "Used transformer embeddings and TF-IDF to generate meaningful topic representations",
+      "Identified positive review keywords (e.g., good, great, cutting) and negative indicators (e.g., broke, bad)",
+      "Provided actionable insights to help improve product quality and customer satisfaction",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  PRODUCT_REVIEW_MODEL: {
+    title: "Dairy Product Quality Classification Using Decision Tree Model",
+    subtitle: "Built and evaluated a decision tree classifier after preprocessing and analyzing dairy product data",
+    tech: ["Python", "Pandas", "Scikit-Learn", "NumPy", "Matplotlib", "Seaborn"],
+    metrics: "Used data cleaning, feature preprocessing, and decision tree modeling to classify dairy product quality",
+    description: `
+    This project focuses on developing a machine learning classification model to predict the quality or category of dairy products based on structured dataset features. The workflow included complete data preprocessing—handling missing values, correcting inconsistencies, removing duplicates, performing feature engineering, and visualizing attribute relationships using Python.
+    After cleaning and analyzing the dataset, a Decision Tree Classifier was trained to predict product classes or quality categories. The model structure was chosen for interpretability, allowing clear insight into which features drive classification outcomes. The data was split into training and testing sets, followed by model evaluation using accuracy, classification reports, and visualizing decision paths.
+    This project demonstrates the full ML pipeline: from exploratory data analysis (EDA) to feature preprocessing, model training, prediction generation, and performance assessment.
+    `,
+    highlights: [
+      "Performed full data preprocessing on dairy product dataset",
+      "Conducted exploratory data analysis with visualizations to understand distributions and correlations",
+      "Trained a Decision Tree Classifier for product quality prediction",
+      "Evaluated model performance using accuracy, confusion matrix, and classification metrics",
+      "Visualized the tree structure for interpretability and feature importance understanding",
+      "Built separate notebooks for processing, analysis, and prediction, ensuring a modular workflow",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  MOVIE_RATING_MODEL: {
+    title: "Movie Rating & Revenue Prediction Using Linear Regression",
+    subtitle: "Built a regression model to predict movie ratings or revenue based on IMDb dataset features",
+    tech: ["Python", "Pandas", "Scikit-Learn", "NumPy", "Matplotlib", "Seaborn"],
+    metrics: "Developed a linear regression model after performing complete data cleaning, feature analysis, and preprocessing",
+    description: `
+    This project focuses on building a Linear Regression model to predict movie performance metrics using a dataset of Indian IMDb movies. The dataset includes attributes such as movie title, genre, cast details, duration, rating, and other numeric features relevant to performance prediction.
+    The workflow involved data preprocessing, including handling missing values, cleaning inconsistent entries, preprocessing categorical variables, and feature selection. Exploratory Data Analysis (EDA) was performed using visualizations to identify correlations between features such as duration, genre frequency, number of votes, and IMDb ratings.
+    A Linear Regression model was then trained to estimate the movie rating (or revenue, depending on the chosen target variable). The model was evaluated using standard regression metrics such as R² score, Mean Absolute Error (MAE), and Mean Squared Error (MSE).
+    This project demonstrates the complete end-to-end machine learning pipeline for regression tasks: data cleaning, feature engineering, model training, prediction, and error evaluation.
+    `,
+    highlights: [
+      "Performed full EDA on IMDb India movie dataset",
+      "Cleaned and processed data for model compatibility",
+      "Encoded categorical features such as genre and cast",
+      "Trained a Linear Regression model to predict movie performance",
+      "Evaluated predictions using R² score, MAE, and MSE",
+      "Visualized correlations and regression trends to understand feature impacts",
+      "Built reproducible pipeline using Jupyter Notebook",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  SURVIVAL_PRED_MODEL: {
+    title: "Survival Prediction Model Using Machine Learning",
+    subtitle: "Built a predictive model to estimate passenger survival likelihood based on demographic and travel features",
+    tech: ["Python", "Pandas", "NumPy", "Scikit-Learn", "Matplotlib", "Seaborn"],
+    metrics: "Trained and evaluated a survival prediction model using cleaned and engineered features from the dataset",
+    description: `
+    This project focuses on predicting survival outcomes using a machine learning model trained on a structured dataset commonly used in survival analysis. Passenger-related attributes—such as age, gender, ticket class, fare, family size, and embarkation point—were analyzed to determine their influence on survival probability.
+    The workflow included complete data preprocessing, such as handling missing values, performing feature transformations, encoding categorical variables, and creating new engineered features that improved model performance. Exploratory Data Analysis (EDA) was conducted to uncover patterns, including the impact of gender, class, and age on survival rates.
+    A machine learning classifier was trained using Scikit-Learn (e.g., Logistic Regression or similar models, depending on your notebook). The model’s accuracy and predictive capability were evaluated using performance metrics such as accuracy, confusion matrix, and classification report. The final model was used to predict survival outcomes on the evaluation dataset.
+    `,
+    highlights: [
+      "Performed full EDA to explore survival trends based on age, gender, and passenger class",
+      "Cleaned and processed training and evaluation datasets for model compatibility",
+      "Encoded categorical features and engineered new predictors such as family size",
+      "Trained a survival prediction model using Scikit-Learn",
+      "Evaluated model performance using accuracy and classification metrics",
+      "Generated survival predictions for unseen evaluation data",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+  DEPOSIT_SUBS_PRED_MODEL: {
+    title: "Bank Term Deposit Subscription Prediction",
+    subtitle: "Built multiple machine learning models to predict whether customers will subscribe to a term deposit",
+    tech: ["Python", "Pandas", "NumPy", "Scikit-Learn", "Matplotlib", "Seaborn"],
+    metrics: "Achieved up to 84.95% accuracy and 91.55% AUC using Random Forest and SVM classifiers",
+    description: `
+    This project focuses on predicting whether a bank customer will subscribe to a term deposit using a variety of supervised machine learning models. The dataset includes demographic attributes, financial information, contact details, and campaign-related behavioral features. A complete preprocessing pipeline was designed, including handling missing values, encoding categorical variables with one-hot encoding, and feature scaling to ensure model consistency.
+    Four classifiers were trained and evaluated—Decision Tree, Support Vector Machine (SVM), Random Forest, and Logistic Regression—using accuracy, precision, recall, F1-score, ROC curves, and AUC as performance metrics. Random Forest and SVM emerged as top performers, achieving high accuracy and excellent AUC values.
+    Key predictive features included contact duration, previous campaign outcome, customer balance, and age, all of which strongly influence subscription decisions.
+    The final comparative analysis enabled data-driven marketing recommendations, helping banks identify high-potential customers for targeted outreach.
+    `,
+    highlights: [
+      "Processed banking dataset with feature encoding, scaling, and missing-value handling",
+      "Trained four ML models: Decision Tree, SVM, Random Forest, and Logistic Regression",
+      "Achieved 84.95% accuracy and 91.55% AUC using Random Forest",
+      "Identified duration of last contact and previous campaign success as the strongest predictors",
+      "Used pipelines for automated preprocessing and model consistency",
+      "Generated actionable insights to help banks optimize marketing and customer-targeting strategies",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
+    images: [
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
+    ],
+  },
+}
 
+//===================================================================================================================================
 // const NUERAL_NETWORK = {
 //   CLOTHING_NN: {},
 //   DOGS_CATS_CNN: {},
 // }
 
+//===================================================================================================================================
 // const REINFORCEMENT_LEARNING = {
 
 // }
@@ -615,8 +741,11 @@ const data = {
   ],
 
   ml: [
-    { id: "ml-1", ...BASE.CNN_BRAIN_TUMOR },
-    { id: "ml-2", ...BASE.LSTM_STOCK },
+    { id: "ml-1", ...MACHINE_LEARNING.AMAZON_REVIEW_MODEL },
+    { id: "ml-2", ...MACHINE_LEARNING.PRODUCT_REVIEW_MODEL },
+    { id: "ml-3", ...MACHINE_LEARNING.MOVIE_RATING_MODEL },
+    { id: "ml-4", ...MACHINE_LEARNING.SURVIVAL_PRED_MODEL },
+    { id: "ml-5", ...MACHINE_LEARNING.DEPOSIT_SUBS_PRED_MODEL },
   ],
 
   nn: [
