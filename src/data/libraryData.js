@@ -585,27 +585,24 @@ const MACHINE_LEARNING = {
 }
 
 //===================================================================================================================================
-// const NUERAL_NETWORK = {
-//   CLOTHING_NN: {},
-//   DOGS_CATS_CNN: {},
-// }
-
-//===================================================================================================================================
-// const REINFORCEMENT_LEARNING = {
-
-// }
-
-const BASE = {
-  SALES_EDA: {
-    title: "Sales Dashboard — Exploratory Data Analysis",
-    subtitle: "EDA on retail dataset with actionable insights",
-    tech: ["Python", "Pandas", "Seaborn"],
-    metrics: "Reduced reporting time by 60% with reusable notebooks",
-    description:
-      "Performed end-to-end EDA on multi-year retail transactions. Cleaned data, engineered seasonality features, and built an insights deck highlighting growth drivers and dead inventory.",
+const NUERAL_NETWORK = {
+  FASHION_NN: {
+    title: "Neural Network Image Classification on Fashion-MNIST",
+    subtitle: "Built and trained a deep neural network to classify fashion images into 10 apparel categories",
+    tech: ["Python", "TensorFlow", "Keras", "NumPy", "Matplotlib"],
+    metrics: "Achieved high classification accuracy on the Fashion-MNIST dataset using a multi-layer neural network",
+    description: `
+    This project focuses on training a Deep Neural Network (DNN) to classify grayscale clothing images from the Fashion-MNIST dataset, which contains 70,000 images across 10 categories such as shirts, shoes, dresses, bags, and coats.
+    The dataset was preprocessed by normalizing pixel values and reshaping the images for model compatibility. A multi-layer neural network was constructed using TensorFlow/Keras, with dense layers, ReLU activations, dropout for regularization, and a softmax output layer for multi-class classification. The model was trained on the 60,000-image training split and evaluated on the 10,000-image test set.
+    The training process included monitoring loss and accuracy across epochs, and the final model demonstrated strong performance in recognizing apparel categories. Predictions were visualized alongside actual labels to validate model correctness and identify misclassifications.
+    `,
     highlights: [
-      "Automated cleaning & outlier detection",
-      "Cohort & RFM segmentation for customer value",
+      "Trained a deep neural network for image classification on Fashion-MNIST",
+      "Normalized and preprocessed 28x28 grayscale fashion images",
+      "Built a multi-layer architecture with ReLU, Dropout, and Softmax",
+      "Achieved strong classification accuracy across 10 fashion categories",
+      "Visualized predictions, accuracy curves, and model performance",
+      "Demonstrated how neural networks can learn visual features from raw pixels",
     ],
     github: "https://github.com/yourusername/sales-eda",
     images: [
@@ -614,98 +611,88 @@ const BASE = {
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
     ],
   },
-
-  AB_TEST: {
-    title: "A/B Test Analyzer",
-    subtitle: "Stats toolkit to evaluate online experiments",
-    tech: ["Python", "SciPy", "Matplotlib"],
-    metrics: "Includes power analysis and sequential testing helpers",
-    description:
-      "CLI + notebook utilities for designing and evaluating A/B tests (t-test, U-test, Bayesian). Visualization helpers and effect-size reporting included.",
-    highlights: ["Power & sample size calculator", "Multiple-testing corrections"],
-    github: "https://github.com/yourusername/ab-test-analyzer",
+  DOGS_V_CATS_CNN: {
+    title: "Convolutional Neural Network for Cats vs. Dogs Image Classifier",
+    subtitle: "Developed a CNN model to classify large-scale dog and cat images with high accuracy",
+    tech: ["Python", "TensorFlow", "Keras", "NumPy", "Matplotlib"],
+    metrics: "Trained a deep convolutional model on a large Dogs vs. Cats dataset to accurately distinguish between the two classes",
+    description: `
+    This project focuses on building a Convolutional Neural Network (CNN) capable of classifying images of cats and dogs using a large-scale dataset. The dataset contains thousands of labeled images with significant variation in lighting, background, angle, and size, making it a strong benchmark for testing deep learning performance.
+    The workflow involved loading and preprocessing the dataset, including image resizing, normalization, and generating batches using ImageDataGenerator for data augmentation. The CNN architecture included multiple convolutional layers, max-pooling layers, dropout for regularization, and dense layers leading to a sigmoid output for binary classification.
+    The model was trained using TensorFlow/Keras, with performance monitored through training and validation accuracy/loss curves. After training, the model demonstrated strong generalization on unseen images and was able to correctly predict whether an input image contained a dog or a cat.
+    `,
+    highlights: [
+      "Built a deep CNN to classify cat and dog images",
+      "Processed and augmented large-scale image dataset for robust training",
+      "Designed model with convolution, pooling, dropout, and dense layers",
+      "Achieved high accuracy on validation and test images",
+      "Implemented real-time predictions on unseen images to verify model performance",
+      "Visualized training curves and inspected sample predictions for model evaluation",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
     images: [
-      "https://images.unsplash.com/photo-1556157381-9713d66a5b83?auto=format&fit=crop&w=1400&q=60",
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
     ],
   },
-
-  CHURN_MODEL: {
-    title: "Churn Prediction",
-    subtitle: "Supervised learning on telecom churn",
-    tech: ["Python", "scikit-learn", "XGBoost"],
-    metrics: "ROC-AUC 0.89; SHAP-based explainability",
-    description:
-      "Built a churn model with feature pipelines, class-imbalance handling, and calibrated probabilities. Delivered SHAP insights to guide retention campaigns.",
-    highlights: ["Pipeline + GridSearchCV", "Model cards & drift checks"],
-    github: "https://github.com/yourusername/churn-model",
+  SENTIMENT_RNN: {
+    title: "Recurrent Neural Network for IMDB Movie Review Sentiment Analysis",
+    subtitle: "Built an RNN-based deep learning model to classify movie reviews as positive or negative",
+    tech: ["Python", "TensorFlow", "Keras", "NumPy", "Matplotlib"],
+    metrics: "Trained a recurrent neural network on the IMDB dataset to achieve high sentiment classification accuracy",
+    description: `
+    This project involves applying a Recurrent Neural Network (RNN) to perform sentiment analysis on the IMDB movie reviews dataset, a standard benchmark for natural language processing tasks. The dataset consists of 50,000 movie reviews labeled as either positive or negative.
+    The workflow included full text preprocessing, such as tokenization, integer encoding, padding sequences, and vocabulary size optimization. The model was built using TensorFlow/Keras with an Embedding layer followed by recurrent layers (Simple RNN or LSTM, depending on the notebook). These layers were used to capture sequential patterns and contextual dependencies within the review text.
+    The network was trained on preprocessed sequences and validated on a separate test split. The model effectively learned to identify sentiment-bearing structures and was able to classify unseen reviews with strong accuracy. Performance curves and sample predictions were analyzed to evaluate learning behavior and generalization.
+    `,
+    highlights: [
+      "Preprocessed IMDB reviews using tokenization, sequence encoding, and padding",
+      "Built an RNN-based architecture (Embedding → RNN/LSTM → Dense) for sentiment prediction",
+      "Trained on 25,000 reviews and tested on 25,000 unseen samples",
+      "Achieved strong classification accuracy on test data",
+      "Visualized training/validation accuracy and loss over epochs",
+      "Demonstrated sentiment prediction on new user-provided text samples",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
     images: [
-      "https://images.unsplash.com/photo-1551281044-8b89a2b51e97?auto=format&fit=crop&w=1400&q=60",
-      "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
     ],
   },
-
-  RECSYS_CONTENT: {
-    title: "Recommendation System (Content-Based)",
-    subtitle: "TF-IDF + cosine similarity for news",
-    tech: ["Python", "scikit-learn", "FastAPI"],
-    metrics: "p95 latency < 60ms on CPU",
-    description:
-      "Content-based recommender with TF-IDF vectors and cosine similarity served via FastAPI. Includes caching and evaluation notebooks.",
-    highlights: ["Deployable API with docs", "Offline metrics & sampling"],
-    github: "https://github.com/yourusername/news-recs",
+  PLAY_GEN_RNN: {
+    title: "Recurrent Neural Network for Shakespeare-Style Play Generation",
+    subtitle: "Trained an RNN model to learn Shakespearean writing patterns and generate new literary text",
+    tech: ["Python", "TensorFlow", "Keras", "NumPy", "Matplotlib"],
+    metrics: "Built an RNN-based text generator trained on Shakespeare’s writing style (project in progress)",
+    description: `
+    This project aims to build a Recurrent Neural Network (RNN) capable of generating new Shakespeare-style text by learning patterns from existing literary samples. Using a corpus of Shakespearean writing, the text is preprocessed through character-level or word-level tokenization, integer encoding, and sequence creation. These sequences allow the model to learn contextual relationships between characters or words.
+    The model architecture includes an Embedding layer followed by one or more RNN/LSTM layers, enabling it to capture long-term dependencies typical of Shakespeare’s poetic and dramatic structure. After training, the model generates new text one character or word at a time, conditioned on previous outputs.
+    Although the model is still under development, initial training experiments demonstrate that the network begins to mimic Shakespeare’s rhythm, vocabulary, and style as training progresses. Further training, tuning, and dataset expansion will continue to improve the quality and coherence of the generated play-style text.
+    `,
+    highlights: [
+      "Built an RNN/LSTM-based text generation model trained on Shakespeare’s writing",
+      "Preprocessed dataset using tokenization, sequence generation, and vector encoding",
+      "Implemented character/word-level generation to mimic dramatic writing styles",
+      "Generated early-stage outputs showing Shakespeare-like phrasing",
+      "Visualized training/validation accuracy and loss over epochs",
+      "Project still in progress, with plans for extended training and improved text coherence",
+    ],
+    github: "https://github.com/yourusername/sales-eda",
     images: [
-      "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1400&q=60",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60",
     ],
   },
+}
 
-  CNN_BRAIN_TUMOR: {
-    title: "Brain Tumor Detection (CNN)",
-    subtitle: "Medical imaging classification",
-    tech: ["TensorFlow", "Keras", "OpenCV"],
-    metrics: "Test accuracy 92% on curated dataset",
-    description:
-      "U-Net-style pre-processing, data augmentation, and a compact CNN tuned with early stopping. Includes Grad-CAM for interpretability.",
-    highlights: ["Augmentations & class balancing", "Grad-CAM visualizations"],
-    github: "https://github.com/yourusername/brain-tumor-detection",
-    images: [
-      "https://images.unsplash.com/photo-1581091870622-7e0cdfbb6792?auto=format&fit=crop&w=1400&q=60",
-      "https://images.unsplash.com/photo-1581093588401-16b1d2e8d9b3?auto=format&fit=crop&w=1400&q=60",
-    ],
-  },
+//===================================================================================================================================
+// const REINFORCEMENT_LEARNING = {
 
-  LSTM_STOCK: {
-    title: "Stock Price Prediction (LSTM)",
-    subtitle: "Sequence modeling for closing prices",
-    tech: ["PyTorch", "LSTM", "NumPy"],
-    metrics: "MAPE 3.8% on rolling window",
-    description:
-      "Built an LSTM with sliding windows, scaling, and walk-forward validation. Baselines with ARIMA and Prophet for comparison.",
-    highlights: ["Walk-forward CV", "Baseline parity & error bands"],
-    github: "https://github.com/yourusername/stock-lstm",
-    images: [
-      "https://images.unsplash.com/photo-1549421263-865f9c07db4a?auto=format&fit=crop&w=1400&q=60",
-      "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=1400&q=60",
-    ],
-  },
+// }
 
-  // (Optional) A simple RL placeholder if you add RL-specific work later
-  RL_CARTPOLE: {
-    title: "CartPole Agent (DQN)",
-    subtitle: "Value-based RL on classic control",
-    tech: ["Python", "PyTorch", "Gymnasium"],
-    metrics: "Solves CartPole in < 200 episodes",
-    description:
-      "Implemented a DQN agent with replay buffer and target network. Includes epsilon-greedy scheduling and learning-rate warmup.",
-    highlights: ["Priority replay (optional)", "TensorBoard logging"],
-    github: "https://github.com/yourusername/rl-cartpole",
-    images: [
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=60",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=60",
-    ],
-  },
-};
 
 // Category buckets. If a project appears in multiple categories but needs
 // different screenshots, override `images` where you spread it.
@@ -733,13 +720,6 @@ const data = {
     { id: "vs-9", ...VISUALIZATION.WEB_AGENCY_VIS },
   ],
 
-  mining: [
-    { id: "dm-1", ...MINING.CUSTOMER_SEGMENTATION_CLUSTERING },
-    { id: "dm-2", ...MINING.SVM_PROJECT },
-    { id: "dm-3", ...MINING.IRIS_CLASSIFICATION_PROJECT },
-    { id: "dm-4", ...MINING.WEATHER_HMM_PROJECT },
-  ],
-
   ml: [
     { id: "ml-1", ...MACHINE_LEARNING.AMAZON_REVIEW_MODEL },
     { id: "ml-2", ...MACHINE_LEARNING.PRODUCT_REVIEW_MODEL },
@@ -748,22 +728,24 @@ const data = {
     { id: "ml-5", ...MACHINE_LEARNING.DEPOSIT_SUBS_PRED_MODEL },
   ],
 
+  mining: [
+    { id: "dm-1", ...MINING.CUSTOMER_SEGMENTATION_CLUSTERING },
+    { id: "dm-2", ...MINING.SVM_PROJECT },
+    { id: "dm-3", ...MINING.IRIS_CLASSIFICATION_PROJECT },
+    { id: "dm-4", ...MINING.WEATHER_HMM_PROJECT },
+  ],
+
+
   nn: [
-    // Example override: different screenshots for the same base project
-    {
-      id: "nn-1",
-      ...BASE.CNN_BRAIN_TUMOR,
-      images: [
-        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=60",
-        "https://images.unsplash.com/photo-1581092795360-cd5c6a8aeb56?auto=format&fit=crop&w=1400&q=60",
-      ],
-    },
-    { id: "nn-2", ...BASE.LSTM_STOCK },
+    { id: "nn-1", ...NUERAL_NETWORK.FASHION_NN },
+    { id: "nn-2", ...NUERAL_NETWORK.DOGS_V_CATS_CNN },
+    { id: "nn-2", ...NUERAL_NETWORK.SENTIMENT_RNN },
+    { id: "nn-2", ...NUERAL_NETWORK.PLAY_GEN_RNN },
   ],
 
   rl: [
-    { id: "rl-1", ...BASE.RL_CARTPOLE },
-    { id: "rl-2", ...BASE.LSTM_STOCK },
+    // { id: "rl-1", ...BASE.RL_CARTPOLE },
+    // { id: "rl-2", ...BASE.LSTM_STOCK },
   ],
 };
 
